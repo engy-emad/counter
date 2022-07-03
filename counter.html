@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./assets/style.css">
+    <title>counter</title>
+</head>
+
+<body>
+    <div class="container">
+        <div class="box">
+            <h1 class="counter">0</h1>
+        </div>
+
+        <div class="buttons">
+            <button class="minus" onclick="minus()">Minus</button>
+
+            <button class="plus" onclick="plus()">Plus</button>
+        </div>
+    </div>
+
+    <script>
+        let count = 0;
+        let counter = document.querySelector(".counter");
+        let changeColor = document.querySelector("body");
+        let color = ["#222f3e", "#f268e0", "#ee5253", "#0abde3",
+            "#10ac84", "#222f3e", "#5f27cd", "aqua", "beige", "blue", "#fff00", "#a29bfe", "rgba(99, 110, 114,1.0)", "#2ecc71", "#d35400", "#66ffff"
+        ];
+        let i = 0;
+
+        function minus() {
+            // if (count == 0) {
+            //     count = 0;
+            // } else {
+            //     count = count - 1;
+            // }
+            count == 0 ? count =0 : count = count - 1;
+            counter.innerHTML = count;
+
+            i = 1 < color.length ? ++i : 0;
+            changeColor.style.background = color[i];
+
+        }
+
+        function plus() {
+            count = count + 1;
+            counter.innerHTML = count;
+            i = 1 < color.length ? ++i : 0;
+            changeColor.style.background = color[i]
+        }
+    </script>
+</body>
+
+</html>
